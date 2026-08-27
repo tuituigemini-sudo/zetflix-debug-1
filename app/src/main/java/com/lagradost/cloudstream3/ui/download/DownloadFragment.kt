@@ -104,6 +104,7 @@ class DownloadFragment : BaseFragment<FragmentDownloadsBinding>(
             }
         }
 
+/*
         observe(downloadViewModel.availableBytes) {
             updateStorageInfo(
                 binding.root.context,
@@ -139,6 +140,7 @@ class DownloadFragment : BaseFragment<FragmentDownloadsBinding>(
                 binding.downloadApp
             )
         }
+*/
         observe(downloadQueueViewModel.childCards) { cards ->
             val size = cards.currentDownloads.size + cards.queue.size
             val context = binding.root.context
@@ -227,7 +229,7 @@ class DownloadFragment : BaseFragment<FragmentDownloadsBinding>(
 
         binding.apply {
             openLocalVideoButton.apply {
-                isGone = isLayout(TV)
+                isVisible = false
                 setOnClickListener { openLocalVideo() }
             }
 
